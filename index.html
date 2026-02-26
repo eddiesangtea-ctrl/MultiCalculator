@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Pro Multi Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+  <h2 id="title">Calculator</h2>
+</header>
+
+<!-- ================= MODES ================= -->
+
+<!-- CALCULATOR -->
+<section id="calc" class="mode active">
+  <input id="display" class="display" readonly>
+
+  <div class="keys">
+    <button onclick="press('7')">7</button>
+    <button onclick="press('8')">8</button>
+    <button onclick="press('9')">9</button>
+    <button class="op" onclick="press('/')">÷</button>
+
+    <button onclick="press('4')">4</button>
+    <button onclick="press('5')">5</button>
+    <button onclick="press('6')">6</button>
+    <button class="op" onclick="press('*')">X</button>
+
+    <button onclick="press('1')">1</button>
+    <button onclick="press('2')">2</button>
+    <button onclick="press('3')">3</button>
+    <button class="op" onclick="press('-')">−</button>
+
+    <button onclick="press('0')">0</button>
+<button onclick="deleteOne()">⌫</button>
+<button class="equal" onclick="calculate()">=</button>
+<button class="op" onclick="press('+')">+</button>
+  </div>
+</section>
+
+<!-- VOLUME -->
+<section id="volume" class="mode">
+  <div class="card">
+    <h3>Volume Calculator</h3>
+    <input id="length" placeholder="Length">
+    <input id="width" placeholder="Width">
+    <input id="height" placeholder="Height">
+    <button onclick="calcVolume()">Calculate</button>
+    <p id="volumeResult"></p>
+  </div>
+</section>
+
+<!-- CURRENCY -->
+<section id="currency" class="mode">
+  <div class="card">
+    <h3>Currency Converter</h3>
+    <input id="amount" placeholder="Amount">
+    <button onclick="inrToUsd()">INR → USD</button>
+    <button onclick="usdToInr()">USD → INR</button>
+    <p id="currencyResult"></p>
+  </div>
+</section>
+
+<!-- MONEY -->
+<section id="money" class="mode">
+  <div class="card">
+    <h3>Money Counter</h3>
+    <input id="n500" placeholder="₹500 notes">
+    <input id="n200" placeholder="₹200 notes">
+    <input id="n100" placeholder="₹100 notes">
+    <input id="n50" placeholder="₹50 notes">
+    <button onclick="countMoney()">Calculate</button>
+    <p id="moneyResult"></p>
+  </div>
+</section>
+
+<!-- LOAN -->
+<section id="loan" class="mode">
+  <div class="card">
+    <h3>Loan Calculator</h3>
+    <input id="loanAmount" placeholder="Loan Amount">
+    <input id="interest" placeholder="Interest %">
+    <input id="months" placeholder="Months">
+    <button onclick="calcLoan()">Calculate EMI</button>
+    <p id="loanResult"></p>
+  </div>
+</section>
+
+<!-- ================= BOTTOM NAV ================= -->
+
+<nav class="bottomNav">
+  <button onclick="switchMode('calc','Calculator')">🧮</button>
+  <button onclick="switchMode('volume','Volume')">📦</button>
+  <button onclick="switchMode('currency','Currency')">💱</button>
+  <button onclick="switchMode('money','Money')">💵</button>
+  <button onclick="switchMode('loan','Loan')">🏦</button>
+</nav>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
